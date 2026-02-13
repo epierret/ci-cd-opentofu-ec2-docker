@@ -1,0 +1,6 @@
+aws_region      = "us-east-1"
+aws_access_key  = "YOUR_AWS_ACCESS_KEY"
+aws_secret_key  = "YOUR_AWS_SECRET_KEY"
+subnet_id       = "subnet-xxxxxxxxxx"
+instance_type   = "t3.micro"
+ami_id          = "ami-053b0d53c279acc90"
