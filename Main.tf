@@ -34,24 +34,3 @@ resource "aws_vpc" "main" {
     Name = "vpc-terraform"
   }
 }
-
-# --- Subnet ---
-resource "aws_subnet" "main" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
-
-  tags = {
-    Name = "subnet-terraform"
-  }
-}
-
-# --- EC2 Instance ---
-resource "aws_instance" "opentofuvm" {
-  ami           = data.aws_ami.amazon_linux.id
-  instance_type = "t3.micro"
-  subnet_id     = aws_subnet.main.id
-
-  tags = {
-    Name = "OpenTofuVM"
-  }
-}
