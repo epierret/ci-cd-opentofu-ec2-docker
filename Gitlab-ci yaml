@@ -3,6 +3,7 @@ stages:
   - validate
   - plan
   - apply
+  - deploy
 
 variables:
   TF_IN_AUTOMATION: "true"
@@ -39,3 +40,7 @@ apply:
     - opentofu init
     - opentofu apply -auto-approve tfplan
   when: manual
+
+deploy:
+ stage: deploy
+  
